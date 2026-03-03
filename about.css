@@ -1,0 +1,110 @@
+/* ================= PREMIUM ABOUT ME ================= */
+
+.about-me{
+    padding:120px 20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: radial-gradient(circle at top left, #1a1a2e, #0f3460, #000);
+}
+
+/* Glass Card */
+.about-card{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:50px;
+    max-width:1100px;
+    padding:50px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    color:white;
+    overflow:hidden;
+    transition:0.5s;
+}
+
+/* Animated Glow Border */
+.about-card::before{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    border-radius:25px;
+    background:linear-gradient(45deg,#ff00cc,#3333ff,#00f0ff,#ff00cc);
+    background-size:300% 300%;
+    animation: borderGlow 6s linear infinite;
+    z-index:-1;
+}
+
+@keyframes borderGlow{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Hover Effect */
+.about-card:hover{
+    transform:scale(1.04);
+}
+
+/* Image Styling */
+.about-image img{
+    width:280px;
+    border-radius:20px;
+    box-shadow:0 0 40px rgba(255,0,200,0.6);
+    transition:0.4s;
+}
+
+.about-image img:hover{
+    transform:scale(1.05);
+}
+
+/* Text Styling */
+.about-text h2{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.about-text h4{
+    color:#ff3c78;
+    margin-bottom:20px;
+    letter-spacing:1px;
+}
+
+.about-text p{
+    font-size:17px;
+    line-height:1.8;
+    opacity:0.9;
+    margin-bottom:15px;
+}
+
+/* Button */
+.about-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 35px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    border-radius:40px;
+    background:linear-gradient(45deg,#ff512f,#dd2476);
+    transition:0.4s;
+    box-shadow:0 0 20px rgba(221,36,118,0.5);
+}
+
+.about-btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 40px rgba(221,36,118,0.9);
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .about-card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .about-image img{
+        width:220px;
+    }
+}
